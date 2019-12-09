@@ -26,6 +26,8 @@ public:
 
     void SearchLongest(const Vertex &src);
 
+    void SearchAllPath(const Vertex &src, size_t len, list<VertexList> &out_list);
+
 private:
     void parseGraph();
 };

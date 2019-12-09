@@ -46,6 +46,8 @@ int main() {
     Dfs dfs(graph);
 
     dfs.SearchLongest(start_pos);
+    list<VertexList> all_path;
+    dfs.SearchAllPath(start_pos, 30, all_path);
 
     return 0;
 }

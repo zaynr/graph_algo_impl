@@ -3,7 +3,60 @@
 //
 
 #include <logger.h>
+#include <sstream>
 #include "dfs.h"
+
+void Dfs::SearchAllPath(const Vertex &src, const size_t len, list<VertexList> &out_list) {
+    out_list.clear();
+
+    size_t cur_len = 0;
+    VertexList cur_list;
+    cur_list.push_back(src);
+    out_list.push_back(cur_list);
+    list<VertexSet> all_path_set;
+    VertexSet path_set;
+    path_set.insert(src);
+    all_path_set.push_back(path_set);
+    while (cur_len != len) {
+        ++cur_len;
+        list<VertexList> inner_list;
+        list<VertexSet> inner_set;
+        while (!out_list.empty()) {
+            VertexList adj_list = graph_.GetAdjList(*cur_list.rbegin());
+            bool empty = true;
+            for(const auto &item : adj_list) {
+                path_set = *all_path_set.rbegin();
+                auto res = path_set.insert(item);
+                if(!res.second) {
+                    continue;
+                }
+                empty = false;
+                cur_list = *out_list.rbegin();
+                cur_list.push_back(item);
+                inner_list.push_back(cur_list);
+                inner_set.push_back(path_set);
+            }
+            if (empty) {
+                inner_list.push_back(*out_list.rbegin());
+                inner_set.push_back(*all_path_set.rbegin());
+            }
+            out_list.pop_back();
+            all_path_set.pop_back();
+        }
+        out_list.swap(inner_list);
+        all_path_set.swap(inner_set);
+    }
+
+    for(auto &item : out_list) {
+        stringstream ss;
+        for(auto &inner_item : item) {
+            ss << "(" << inner_item.x
+                << "," << inner_item.y
+                << ") -> ";
+        }
+        LOG("path: %s", ss.str().c_str());
+    }
+}
 
 void Dfs::SearchLongest(const Vertex &src) {
     open_set_.insert(src);
