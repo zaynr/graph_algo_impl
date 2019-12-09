@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c498e6a7-8cf3-4578-921e-07171882ecea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dfs/dfs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dfs/dfs.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dfs/dfs.h" beforeDir="false" afterPath="$PROJECT_DIR$/dfs/dfs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +76,7 @@
       <updated>1575644358485</updated>
       <workItem from="1575644360146" duration="1078000" />
       <workItem from="1575645505220" duration="10375000" />
-      <workItem from="1575736944917" duration="26112000" />
+      <workItem from="1575736944917" duration="26919000" />
     </task>
     <servers />
   </component>

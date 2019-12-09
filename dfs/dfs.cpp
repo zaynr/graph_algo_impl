@@ -47,15 +47,7 @@ void Dfs::SearchAllPath(const Vertex &src, const size_t len, list<VertexList> &o
         all_path_set.swap(inner_set);
     }
 
-    for(auto &item : out_list) {
-        stringstream ss;
-        for(auto &inner_item : item) {
-            ss << "(" << inner_item.x
-                << "," << inner_item.y
-                << ") -> ";
-        }
-        LOG("path: %s", ss.str().c_str());
-    }
+    LOG("possible path: %u", all_path_set.size());
 }
 
 void Dfs::SearchLongest(const Vertex &src) {
